@@ -28,6 +28,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+from decouple import config
+GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
+
 # Application definition
 
 INSTALLED_APPS = [

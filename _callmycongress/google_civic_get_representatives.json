@@ -1,0 +1,443 @@
+{
+    "kind": "civicinfo#representativeInfoResponse",
+    "normalizedInput": {
+        "line1": "",
+        "city": "Sudley Springs",
+        "state": "VA",
+        "zip": "20109"
+    },
+    "divisions": {
+        "ocd-division/country:us": {
+            "name": "United States",
+            "officeIndices": [
+                0,
+                1
+            ]
+        },
+        "ocd-division/country:us/state:va": {
+            "name": "Virginia",
+            "officeIndices": [
+                2,
+                3,
+                8,
+                9
+            ]
+        },
+        "ocd-division/country:us/state:va/county:prince_william": {
+            "name": "Prince William County",
+            "officeIndices": [
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    "offices": [
+        {
+            "name": "President of the United States",
+            "divisionId": "ocd-division/country:us",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "headOfState",
+                "headOfGovernment"
+            ],
+            "officialIndices": [
+                0
+            ]
+        },
+        {
+            "name": "Vice-President of the United States",
+            "divisionId": "ocd-division/country:us",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "deputyHeadOfGovernment"
+            ],
+            "officialIndices": [
+                1
+            ]
+        },
+        {
+            "name": "United States Senate",
+            "divisionId": "ocd-division/country:us/state:va",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "legislatorUpperBody"
+            ],
+            "officialIndices": [
+                2,
+                3
+            ]
+        },
+        {
+            "name": "Governor",
+            "divisionId": "ocd-division/country:us/state:va",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "headOfGovernment"
+            ],
+            "officialIndices": [
+                4
+            ]
+        },
+        {
+            "name": "Sheriff",
+            "divisionId": "ocd-division/country:us/state:va/county:prince_william",
+            "officialIndices": [
+                5
+            ]
+        },
+        {
+            "name": "Commonwealth's Attorney",
+            "divisionId": "ocd-division/country:us/state:va/county:prince_william",
+            "officialIndices": [
+                6
+            ]
+        },
+        {
+            "name": "Clerk of the Circuit Court",
+            "divisionId": "ocd-division/country:us/state:va/county:prince_william",
+            "officialIndices": [
+                7
+            ]
+        },
+        {
+            "name": "Board of Supervisors, District At-Large",
+            "divisionId": "ocd-division/country:us/state:va/county:prince_william",
+            "officialIndices": [
+                8
+            ]
+        },
+        {
+            "name": "Attorney General",
+            "divisionId": "ocd-division/country:us/state:va",
+            "officialIndices": [
+                9
+            ]
+        },
+        {
+            "name": "Lietuenant Governor",
+            "divisionId": "ocd-division/country:us/state:va",
+            "officialIndices": [
+                10
+            ]
+        }
+    ],
+    "officials": [
+        {
+            "name": "Donald J. Trump",
+            "address": [
+                {
+                    "line1": "The White House",
+                    "line2": "1600 Pennsylvania Avenue NW",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20500"
+                }
+            ],
+            "party": "Republican",
+            "phones": [
+                "(202) 456-1111"
+            ],
+            "urls": [
+                "http://www.whitehouse.gov/"
+            ],
+            "photoUrl": "https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/PE%20Color.jpg",
+            "channels": [
+                {
+                    "type": "GooglePlus",
+                    "id": "+whitehouse"
+                },
+                {
+                    "type": "Facebook",
+                    "id": "whitehouse"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "potus"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "whitehouse"
+                }
+            ]
+        },
+        {
+            "name": "Mike Pence",
+            "address": [
+                {
+                    "line1": "The White House",
+                    "line2": "1600 Pennsylvania Avenue NW",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20500"
+                }
+            ],
+            "party": "Republican",
+            "phones": [
+                "(202) 456-1111"
+            ],
+            "urls": [
+                "http://www.whitehouse.gov/"
+            ],
+            "photoUrl": "https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/VPE%20Color.jpg",
+            "channels": [
+                {
+                    "type": "GooglePlus",
+                    "id": "+whitehouse"
+                },
+                {
+                    "type": "Facebook",
+                    "id": "whitehouse"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "VP"
+                }
+            ]
+        },
+        {
+            "name": "Mark R. Warner",
+            "address": [
+                {
+                    "line1": "703 Hart Senate Office Building",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20510"
+                }
+            ],
+            "party": "Democratic",
+            "phones": [
+                "(202) 224-2023"
+            ],
+            "urls": [
+                "http://warner.senate.gov/"
+            ],
+            "photoUrl": "http://bioguide.congress.gov/bioguide/photo/W/W000805.jpg",
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "MarkRWarner"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "MarkWarner"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "SenatorMarkWarner"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "MarkWarner"
+                }
+            ]
+        },
+        {
+            "name": "Tim Kaine",
+            "address": [
+                {
+                    "line1": "231 Russell Senate Office Building",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20510"
+                }
+            ],
+            "party": "Democratic",
+            "phones": [
+                "(202) 224-4024"
+            ],
+            "urls": [
+                "http://kaine.senate.gov/"
+            ],
+            "photoUrl": "http://bioguide.congress.gov/bioguide/photo/K/K000384.jpg",
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SenatorKaine"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "SenKaineOffice"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "SenatorTimKaine"
+                }
+            ]
+        },
+        {
+            "name": "Ralph S. Northam",
+            "address": [
+                {
+                    "line1": "1111 East Broad Street",
+                    "city": "Richmond",
+                    "state": "VA",
+                    "zip": "23219"
+                }
+            ],
+            "party": "Democratic",
+            "phones": [
+                "(804) 786-2211"
+            ],
+            "urls": [
+                "http://www.governor.virginia.gov/"
+            ],
+            "emails": [
+                "ltgov@ltgov.virginia.gov"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "61634046094"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "GovernorVA"
+                }
+            ]
+        },
+        {
+            "name": "Glendell Hill",
+            "address": [
+                {
+                    "line1": "9311 Lee Avenue JU130",
+                    "city": "Manassas",
+                    "state": "VA",
+                    "zip": "20110"
+                }
+            ],
+            "party": "Republican",
+            "phones": [
+                "(703) 792-6070"
+            ],
+            "urls": [
+                "http://www.pwcgov.org/government/dept/sheriff/Pages/default.aspx"
+            ]
+        },
+        {
+            "name": "Paul Ebert",
+            "address": [
+                {
+                    "line1": "PO Box 266",
+                    "city": "Farmville",
+                    "state": "VA",
+                    "zip": "23901"
+                }
+            ],
+            "party": "Democratic",
+            "phones": [
+                "(434) 392-1902"
+            ],
+            "urls": [
+                "http://www.co.prince-edward.va.us/commwth_atty_index.shtml"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "LoudounOCA"
+                }
+            ]
+        },
+        {
+            "name": "Jacqueline C. Smith",
+            "address": [
+                {
+                    "line1": "9311 Lee Avenue,",
+                    "city": "Manassas",
+                    "state": "VA",
+                    "zip": "20110"
+                }
+            ],
+            "party": "Unknown",
+            "phones": [
+                "(703) 792-6015"
+            ],
+            "urls": [
+                "http://www.pwcgov.org/government/courts/circuit/pages/default.aspx"
+            ],
+            "emails": [
+                "circuitcourt@pwcgov.org"
+            ]
+        },
+        {
+            "name": "Corey Stewart",
+            "address": [
+                {
+                    "line1": "1 County Complex Court",
+                    "city": "",
+                    "state": "VA",
+                    "zip": "22192"
+                }
+            ],
+            "party": "Republican",
+            "phones": [
+                "(703) 792-6000"
+            ],
+            "urls": [
+                "http://www.pwcgov.org/government/bocs/Pages/Chairman-At-Large.aspx"
+            ],
+            "emails": [
+                "cstewart@pwcgov.org"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "204080402942141"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CoreyStewartVA"
+                }
+            ]
+        },
+        {
+            "name": "Mark R. Herring",
+            "address": [
+                {
+                    "line1": "900 E. Main St.",
+                    "line2": "6th Floor",
+                    "city": "Richmond",
+                    "state": "VA",
+                    "zip": "23219"
+                }
+            ],
+            "party": "Democratic",
+            "phones": [
+                "(804) 786-2071"
+            ],
+            "urls": [
+                "http://www.vaag.virginia.gov"
+            ]
+        },
+        {
+            "name": "Justin Fairfax",
+            "address": [
+                {
+                    "line1": "102 Governor Street",
+                    "city": "Richmond",
+                    "state": "VA",
+                    "zip": "23219"
+                }
+            ],
+            "party": "Democratic",
+            "phones": [
+                "(804) 692-0007"
+            ],
+            "urls": [
+                "http://www.ltgov.virginia.gov/"
+            ],
+            "emails": [
+                "ltgov@ltgov.virginia.gov"
+            ]
+        }
+    ]
+}
