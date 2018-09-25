@@ -4,12 +4,14 @@ from django.http import HttpResponse, JsonResponse
 from .forms import MemberSearchForm
 
 def index(request):
-    
     return render(request, 'index.html')
 
 def search(request):
     address = request.GET.get('address', '')
-    roles = request.GET.get('roles', '')
+    if request.GET.get('roles') == '':
+        roles = ['legislatorUpperBody', 'legislatorLowerBody']
+    else:
+        roles = request.GET.get('roles')
     print('REQUEST.GET')
     print(request.GET)
     
