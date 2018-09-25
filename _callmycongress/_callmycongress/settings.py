@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 from decouple import config
 GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
+PROPUBLICA_CONGRESS_API_KEY = config('PROPUBLICA_CONGRESS_API_KEY', default='')
 
 # Application definition
 
@@ -120,7 +121,56 @@ USE_L10N = True
 
 USE_TZ = True
 
+def skip_static_requests(record):
+    if record.args[0].startswith('GET /static/'):
+        return False
+    return True
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'skip_static_requests': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': skip_static_requests
+        }
+    },
+    'formatters': {
+        'simple': {
+            'format': '%(levelname)s:%(name)s(%(lineno)d) - %(message)s',
+        },
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[%(server_time)s] %(message)s',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'django.server': {
+            'level': 'INFO',
+            'filters': ['skip_static_requests'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server'
+        }
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
+            'propagate': False
+        }
+        
+    }
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
