@@ -1,10 +1,11 @@
-import requests
 from django.conf import settings
-from pprint import pprint
 
+from pprint import pprint
+import requests
 import logging
 
 log = logging.getLogger(__name__)
+
 
 class PropublicaClient(object):
     def __init__(self):

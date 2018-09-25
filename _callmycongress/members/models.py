@@ -2,6 +2,13 @@ from django.db import models
 from .constants import STATES
 
 
+class MemberManager(models.Manager):
+    def senators(self):
+        return self.filter(chamber='Senate')
+
+    def representatives(self):
+        return self.filter(chamber='House')
+
 class Member(models.Model):
     PARTY_CHOICES = [('D', 'Democrat'), ('R', 'Republican'), ('I', 'Independent')]
     STATE_CHOICES = STATES
@@ -29,12 +36,20 @@ class Member(models.Model):
 
     image = models.URLField(blank=True)
 
+    objects = MemberManager()
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
     @property
     def full_name(self):
         return self.first_name + ' ' + self.last_name
+    
+    def clean_title(self):
+        self.title = self.title.split(',')[0]
+        self.save()
+        return self.title
+
 
     def state_verbose(self):
         return dict(Member.STATE_CHOICES)[self.state]

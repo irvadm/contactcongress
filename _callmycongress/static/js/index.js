@@ -31,18 +31,20 @@ $('#member-search-form').submit(function(e) {
 })
 
 function createMember(object) {
-    var container = $('#results');
+    var container = $('#member-container');
     for (var key in object) {
         console.log(key, object[key]);
     };
     container.append(`
-        <div class="card member">
-            <a href="">${object.name}</a>
-
+        <div member-id="${object.member_id}" class="card member">
+            <a href=""><img class="card-img-top img-fluid rounded" src="${object.image}" ></a>
             <div class="card-body">
-                <p class="card-text">Party: ${object.party}</p>
-                <p class="card-text">Phone #: ${object.phones}</p>
-                <p class="card-text">Website: ${object.urls}</p>
+                <div class="card-title"<a href="${object.website}">${object.first_name} ${object.last_name}</a></div>
+                <div class="card-text lead text-muted">${object.title}</div>
+                <div class="card-text">Party: ${object.party}</div>
+                <div class="card-text">State: ${object.state}</div>
+                <div class="card-text">Office: ${object.office}</div>
+                <div class="card-text">Phone #: ${object.phone}</div>
             </div>
         </div>
     `)

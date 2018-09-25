@@ -28,10 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
+# API keys
 from decouple import config
 GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
 PROPUBLICA_CONGRESS_API_KEY = config('PROPUBLICA_CONGRESS_API_KEY', default='')
+TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
+TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
+TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
+TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')
+
 
 # Application definition
 
@@ -173,7 +178,6 @@ LOGGING = {
 }
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [

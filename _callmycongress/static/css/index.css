@@ -1,8 +1,25 @@
+/* --- Global styles --- */
 label {
     font-weight: bold;
 }
 form {
     width: 50%;
     margin: auto;
-
 }
+/* --- Global styles --- */
+
+
+/* --- Member styles --- */
+#member-container {
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+    justify-content: space-around
+}
+.member {
+    width: 25%;
+}
+/* --- Member styles --- */
+
+
+
