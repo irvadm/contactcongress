@@ -1,23 +1,16 @@
 from django import forms
 
 
-class MemberSearchForm(forms.Form):
-    CHAMBER_CHOICES = (
-        ('', 'Both'),
-        ('legislatorLowerBody', 'House'),
-        ('legislatorUpperBody', 'Senate')
-    )
-    address = forms.CharField(
-        max_length=160,
+class ContactForm(forms.Form):
+    from_email = forms.EmailField(
         required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Address or zipcode'})
+        widget=forms.EmailInput(attrs={'class': 'form-control'})
     )
-    # zipcode = forms.CharField(
-    #     max_length=6,
-    #     widget=forms.TextInput(attrs={'class': 'form-control'})
-    # )
-    roles = forms.ChoiceField(
-        required=False,
-        choices=CHAMBER_CHOICES,
-        widget=forms.Select(attrs={'class': 'form-control'})
+    subject = forms.CharField(
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+    message = forms.CharField(
+        required=True,
+        widget=forms.Textarea(attrs={'class': 'form-control'})
     )

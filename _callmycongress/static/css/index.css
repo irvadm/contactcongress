@@ -1,11 +1,26 @@
 /* --- Global styles --- */
+.header {
+    color: #444;
+}
 label {
     font-weight: bold;
+
 }
 form {
     width: 50%;
     margin: auto;
 }
+form > * {
+    margin: 0.5em;
+}
+a {
+    color: #444;
+}
+a:hover {
+    text-decoration: none !important;
+    color: #ff3b3f !important;
+}
+
 #main-container {
     display: flex;
     flex-direction: column;

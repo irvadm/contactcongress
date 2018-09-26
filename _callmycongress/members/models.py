@@ -30,6 +30,7 @@ class Member(models.Model):
 
     twitter_account = models.CharField(max_length=60, blank=True, null=True)
     facebook_account = models.CharField(max_length=60, blank=True, null=True)
+    email = models.EmailField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True) # auto_now_add: set when model is created
     updated = models.DateTimeField(auto_now=True) # auto_now: update everytime model is saved

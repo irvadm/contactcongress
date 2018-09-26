@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-<link href="{% static 'css/index.css' %}" rel="stylesheet">
-{% endblock %}
-
 
 {% block main %}
   <form id="member-search-form" action="{% url 'search' %}">
