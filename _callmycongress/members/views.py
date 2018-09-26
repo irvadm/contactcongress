@@ -47,6 +47,7 @@ def search(request):
                 'image': member.image,
                 'office': member.office,
                 'state': member.state,
+                'website': member.website,
             })
         except:
             continue

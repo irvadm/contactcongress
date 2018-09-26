@@ -37,7 +37,7 @@ function createMember(object) {
     };
     container.append(`
         <div member-id="${object.member_id}" class="card member">
-            <a href=""><img class="card-img-top img-fluid rounded" src="${object.image}" ></a>
+            <a href="${object.website}"><img class="card-img-top img-fluid rounded" src="${object.image}"></a>
             <div class="card-body">
                 <div class="card-title"<a href="${object.website}">${object.first_name} ${object.last_name}</a></div>
                 <div class="card-text lead text-muted">${object.title}</div>

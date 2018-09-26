@@ -6,6 +6,12 @@ form {
     width: 50%;
     margin: auto;
 }
+#main-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2em;
+}
 /* --- Global styles --- */
 
 
@@ -13,13 +19,36 @@ form {
 #member-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin: 2em;
-    justify-content: space-around
+    justify-content: center;
 }
+
 .member {
-    width: 25%;
+    margin: 1em;
+}
+.member:hover {
+    transform: translateY(-3px);
 }
 /* --- Member styles --- */
+
+
+@media (max-width: 768px) {
+/* Screen is 768px or less */    
+    .member {
+        width: 100%;
+    }
+}
+@media (min-width: 769px) {
+    /* Screen is 769px or more */ 
+    .member {
+        width: 25%;
+    }
+}
+/* --- Global styles --- */
+
+
+
 
 
 
