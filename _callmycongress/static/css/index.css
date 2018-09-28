@@ -6,24 +6,38 @@ a:hover {
     text-decoration: none;
     color: #ff3b3f;
 }
-#main-nav {
+#header-nav {
     background-color: #1d4e70;
-    margin-bottom: 2rem;
     text-align: center;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
-@media (min-width: 576px) {
-    .jumbotron {
-        padding: 4rem 2rem;
-    }
-}
+
 #logo {
     color: white;
 }
 #logo > .header-link {
     text-decoration: none;
     color: white;
+}
+#footer-nav {
+    position: fixed;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    left: 0;
+    bottom: 0;
+    background-color: #1d4e70;
+    text-align: center;
+    color: white;
+}
+#footer-nav > * {
+    color: white;
+    font-size: 80%;
+    font-weight: 400;
+}
+#footer-nav > .footer-link:hover {
+    color: #ff3b3f;
 }
 .header {
     color: white;

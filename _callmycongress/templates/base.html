@@ -12,7 +12,7 @@
   </head>
   
   <body>
-    <header id="main-nav" class="">
+    <header id="header-nav" class="">
       <h1 id="logo" class="header">
         <a class="header-link" href="{% url 'index' %}">Contact Congress</a>
       </h1>
@@ -22,6 +22,14 @@
       {% block main %}
       {% endblock %}
     </main>
+
+    <footer id="footer-nav" >
+      <span class="small">Data retrieved through </span>
+      <a class="footer-link" href="https://projects.propublica.org/api-docs/congress-api/">Propublica Congress API</a>
+      <span> and </span>
+      <a class="footer-link" href="https://developers.google.com/civic-information/">Google Civic Information API</a>
+
+    </footer>
 
 
     <script src="{% static 'js/jquery-3.3.1.js' %}" type="text/javascript"></script>
