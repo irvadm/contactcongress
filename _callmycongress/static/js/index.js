@@ -1,7 +1,7 @@
 $('#member-search-form').submit(function(e) {
     console.log('Submitted member search form');
     e.preventDefault();
-
+    
     const address = $(this).children('#address').val();
     console.log(`Address: ${address}`);
     const roles = $(this).children('#roles').val();
@@ -20,6 +20,7 @@ $('#member-search-form').submit(function(e) {
         success: function(response) {
             console.log('Successfully searched for my members!');
             console.log(response);
+            
             for (var object in response) {
                 createMember(response[object]);
             }
@@ -32,6 +33,7 @@ $('#member-search-form').submit(function(e) {
 
 function createMember(object) {
     var container = $('#member-container');
+    $('#member-container').empty();
     for (var key in object) {
         console.log(key, object[key]);
     };
