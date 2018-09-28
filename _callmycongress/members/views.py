@@ -68,8 +68,11 @@ def search(request):
                 'title': member.title,
                 'image': member.image,
                 'office': member.office,
-                'state': member.state,
+                'state': member.state_verbose,
                 'website': member.website,
+                'contact_page': member.contact_page,
+                'twitter_account': member.twitter_account,
+                'facebook_account': member.facebook_account,
             })
         except:
             continue

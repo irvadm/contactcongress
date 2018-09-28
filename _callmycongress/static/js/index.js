@@ -36,16 +36,48 @@ function createMember(object) {
         console.log(key, object[key]);
     };
     container.append(`
-        <div member-id="${object.member_id}" class="card member">
-            <a href="${object.website}"><img class="card-img-top img-fluid rounded" src="${object.image}"></a>
-            <div class="card-body">
-                <div class="card-title"<a href="${object.website}">${object.first_name} ${object.last_name}</a></div>
-                <div class="card-text lead text-muted">${object.title}</div>
-                <div class="card-text">Party: ${object.party}</div>
-                <div class="card-text">State: ${object.state}</div>
-                <div class="card-text">Office: ${object.office}</div>
-                <div class="card-text">Phone #: ${object.phone}</div>
+        <div member-id="${object.member_id}" class="member card">
+            <div class="row">
+                <div class="col-md-3 member-image">
+                    <img class="card-img-top img-fluid rounded" src="${object.image}">
+                    <hr>
+                </div>
+                <div class="col-md-9 member-info">
+                    <h4 class=""><a href="${object.website}">${object.first_name} ${object.last_name} (${object.party})</a></h4>
+                    <div class="lead">${object.title}</div>
+                    <div class="office">
+                        <span class="member-label">Office:</span>
+                        <span>${object.office}</span>
+                    </div>
+                    <div class="phone">
+                        <span class="member-label">Phone:</span>
+                        <span>${object.phone}</span>
+                    </div>
+                    <div class="email">
+                        <a href="${object.contact_page}">Email</a>
+                    </div>
+                    <div class="website">
+                        <a href="${object.website}">Website</a>
+                    </div>
+                    <hr>
+                    <div class="social-media">
+                        <a href="https://www.twitter.com/${object.twitter_account}">
+                            <img class="tw-icon" src="static/img/twitter-icon.svg" onmouseover="hover(this, "static/img/twitter-icon-hover.svg");" onmouseout="unhover(this, "static/img/twitter-icon.svg");" alt="twitter">
+                        </a>
+                        <a href="https://www.facebook.com/${object.facebook_account}">
+                            <img class="fb-icon" src="static/img/facebook-icon.svg" onmouseover="hover(this, "static/img/facebook-icon-hover.svg");" onmouseout="unhover(this, "static/img/facebook-icon.svg");" alt="facebook">
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     `)
 };
+
+function hover(element, src) {
+    element.setAttribute('src', src);
+}
+function unhover(element, src) {
+    element.setAttribute('src', src);
+}

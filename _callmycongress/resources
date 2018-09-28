@@ -4,4 +4,15 @@ https://console.developers.google.com/apis/credentials?project=mimetic-sweep-178
 --- Example projects ---
 https://democracy.io/#!/#%2F
 https://github.com/sinak/democracy.io
+https://www.contactingcongress.org/
+https://www.commoncause.org/find-your-representative/addr/
 
+--- Tutorials ---
+Email contact form - https://hellowebbooks.com/news/tutorial-setting-up-a-contact-form-with-django/
+
+--- Ways to contact congress ---
+Uses each member's contact form on their website - https://github.com/unitedstates/contact-congress
+
+
+--- Python, Django, and Twilio Client ---
+https://www.twilio.com/docs/voice/tutorials/browser-calls-python-django

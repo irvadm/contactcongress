@@ -52,8 +52,10 @@ class MemberUpdater(object):
                     'website': m['url'],
                     'twitter_account': m['twitter_account'],
                     'facebook_account': m['facebook_account'],
+                    'contact_page': m['contact_form'],
                 }
             )
+            member.clean_title()
             # Save district for house members
             if 'district' in m.keys() and member.chamber == 'House':
                 member.district = m['district']
@@ -100,8 +102,6 @@ class MemberUpdater(object):
 def member_tasks():
     """ Job function added to task scheduler. """
     updater = MemberUpdater()
-    # updater.update_members(chamber='house')
-    # updater.update_members(chamber='senate')
-    updater.update_member_images()
-
-member_tasks
+    updater.update_members(chamber='house')
+    updater.update_members(chamber='senate')
+    # updater.update_member_images()

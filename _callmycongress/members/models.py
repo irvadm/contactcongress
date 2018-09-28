@@ -27,6 +27,7 @@ class Member(models.Model):
     phone = models.CharField(max_length=20, blank=True, null=True)
     title = models.CharField(max_length=30, blank=True, null=True)
     website = models.URLField(blank=True, null=True)
+    contact_page = models.URLField(blank=True, null=True)
 
     twitter_account = models.CharField(max_length=60, blank=True, null=True)
     facebook_account = models.CharField(max_length=60, blank=True, null=True)
@@ -48,12 +49,11 @@ class Member(models.Model):
     
     def clean_title(self):
         self.title = self.title.split(',')[0]
-        self.save()
-        return self.title
 
-
+    @property
     def state_verbose(self):
         return dict(Member.STATE_CHOICES)[self.state]
 
+    @property
     def party_verbose(self):
         return dict(Member.PARTY_CHOICES)[self.party]

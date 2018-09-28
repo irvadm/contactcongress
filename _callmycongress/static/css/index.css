@@ -1,5 +1,11 @@
 /* --- Global styles --- */
+body {
+    background-color: #efefef;
+}
 .header {
+    color: #444;
+}
+.sub-header {
     color: #444;
 }
 label {
@@ -20,6 +26,8 @@ a:hover {
     text-decoration: none !important;
     color: #ff3b3f !important;
 }
+/* --- Global styles --- */
+
 
 #main-container {
     display: flex;
@@ -27,40 +35,63 @@ a:hover {
     flex-wrap: nowrap;
     padding: 2em;
 }
-/* --- Global styles --- */
-
-
-/* --- Member styles --- */
-#member-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 2em;
-    justify-content: center;
+.fb-icon {
+    background-image: url('../img/facebook-icon.png') no-repeat;
 }
 
+.tw-icon {
+    /* background-image :url('/static/img/twitter-icon.png') no-repeat; */
+}
+/* .tw-icon:hover {
+    background-image :url('/static/img/twitter-icon-hover.png') no-repeat;
+} */
+
+/* 4598cfff */
+/* --- Member styles --- */
 .member {
-    margin: 1em;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
 }
 .member:hover {
     transform: translateY(-3px);
+}
+.member-label {
+    font-weight: bold;
+}
+.social-media {
+    margin-top: 0.5em;
+}
+.button {
+    display: inline-block;
+    width: 50%;
+    border: none;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
 }
 /* --- Member styles --- */
 
 
 @media (max-width: 768px) {
 /* Screen is 768px or less */    
-    .member {
+    .button {
         width: 100%;
     }
 }
 @media (min-width: 769px) {
     /* Screen is 769px or more */ 
-    .member {
-        width: 25%;
-    }
+
 }
 /* --- Global styles --- */
+
+
+
 
 
 
