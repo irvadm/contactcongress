@@ -36,12 +36,16 @@ function createMember(object) {
         console.log(key, object[key]);
     };
     container.append(`
-        <div member-id="${object.member_id}" class="member card">
+        <div member-id="${object.member_id}" class="member">
             <div class="row">
                 <div class="col-md-3 member-image">
-                    <img class="card-img-top img-fluid rounded" src="${object.image}">
+                    <img class="img-fluid rounded" src="${object.image}">
                     <hr>
+                    <div class="email"><a href="${object.contact_page}">Email</a></div>
+                    <div class="website"><a href="${object.website}">Website</a></div>
                 </div>
+
+
                 <div class="col-md-9 member-info">
                     <h4 class=""><a href="${object.website}">${object.first_name} ${object.last_name} (${object.party})</a></h4>
                     <div class="lead">${object.title}</div>
@@ -53,19 +57,13 @@ function createMember(object) {
                         <span class="member-label">Phone:</span>
                         <span>${object.phone}</span>
                     </div>
-                    <div class="email">
-                        <a href="${object.contact_page}">Email</a>
-                    </div>
-                    <div class="website">
-                        <a href="${object.website}">Website</a>
-                    </div>
                     <hr>
                     <div class="social-media">
                         <a href="https://www.twitter.com/${object.twitter_account}">
-                            <img class="tw-icon" src="static/img/twitter-icon.svg" onmouseover="hover(this, "static/img/twitter-icon-hover.svg");" onmouseout="unhover(this, "static/img/twitter-icon.svg");" alt="twitter">
+                            <img class="tw-icon" src="static/img/twitter-icon.png" alt="twitter">
                         </a>
                         <a href="https://www.facebook.com/${object.facebook_account}">
-                            <img class="fb-icon" src="static/img/facebook-icon.svg" onmouseover="hover(this, "static/img/facebook-icon-hover.svg");" onmouseout="unhover(this, "static/img/facebook-icon.svg");" alt="facebook">
+                            <img class="fb-icon" src="static/img/facebook-icon.png" alt="facebook">
                         </a>
                     </div>
 
@@ -74,10 +72,3 @@ function createMember(object) {
         </div>
     `)
 };
-
-function hover(element, src) {
-    element.setAttribute('src', src);
-}
-function unhover(element, src) {
-    element.setAttribute('src', src);
-}

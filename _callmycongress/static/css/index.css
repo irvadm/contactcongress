@@ -1,12 +1,37 @@
 /* --- Global styles --- */
-body {
-    background-color: #efefef;
+a {
+    color: #444;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff3b3f;
+}
+#main-nav {
+    background-color: #1d4e70;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 4rem 2rem;
+    }
+}
+#logo {
+    color: white;
+}
+#logo > .header-link {
+    text-decoration: none;
+    color: white;
 }
 .header {
-    color: #444;
+    color: white;
+    font-family: "Merriweather", "serif";
 }
-.sub-header {
-    color: #444;
+.header-link {
+    color: white;
+    margin: 0 auto;
 }
 label {
     font-weight: bold;
@@ -19,13 +44,7 @@ form {
 form > * {
     margin: 0.5em;
 }
-a {
-    color: #444;
-}
-a:hover {
-    text-decoration: none !important;
-    color: #ff3b3f !important;
-}
+
 /* --- Global styles --- */
 
 
@@ -35,33 +54,25 @@ a:hover {
     flex-wrap: nowrap;
     padding: 2em;
 }
-.fb-icon {
-    background-image: url('../img/facebook-icon.png') no-repeat;
+
+#member-container {
+    width: 60%;
+    margin: 0 auto;
 }
 
-.tw-icon {
-    /* background-image :url('/static/img/twitter-icon.png') no-repeat; */
-}
-/* .tw-icon:hover {
-    background-image :url('/static/img/twitter-icon-hover.png') no-repeat;
-} */
 
 /* 4598cfff */
 /* --- Member styles --- */
 .member {
-    border: 1px solid #dee2e6;
+    background-color: #ebebeb;
     width: 100%;
     margin-bottom: 1em;
     padding: 0.5em;
-}
-.member:hover {
-    transform: translateY(-3px);
 }
 .member-label {
     font-weight: bold;
 }
 .social-media {
-    margin-top: 0.5em;
 }
 .button {
     display: inline-block;
@@ -74,6 +85,10 @@ a:hover {
     margin: 4px 2px;
     cursor: pointer;
     color: white;
+}
+hr {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 /* --- Member styles --- */
 
