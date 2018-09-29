@@ -1,35 +1,35 @@
-$('#member-search-form').submit(function(e) {
-    console.log('Submitted member search form');
-    e.preventDefault();
+// $('#member-search-form').submit(function(e) {
+//     console.log('Submitted member search form');
+//     e.preventDefault();
     
-    const address = $(this).children('#address').val();
-    console.log(`Address: ${address}`);
-    const roles = $(this).children('#roles').val();
-    console.log(`Roles: ${roles}`);
+//     const address = $(this).children('#address').val();
+//     console.log(`Address: ${address}`);
+//     const roles = $(this).children('#roles').val();
+//     console.log(`Roles: ${roles}`);
 
-    const url = $(this).attr('action');
-    console.log(`URL: ${url}`);
+//     const url = $(this).attr('action');
+//     console.log(`URL: ${url}`);
 
-    $.ajax({
-        url: url,
-        type: 'GET',
-        data: {
-            'address': address,
-            'roles': roles
-        },
-        success: function(response) {
-            console.log('Successfully searched for my members!');
-            console.log(response);
+//     $.ajax({
+//         url: url,
+//         type: 'GET',
+//         data: {
+//             'address': address,
+//             'roles': roles
+//         },
+//         success: function(response) {
+//             console.log('Successfully searched for my members!');
+//             console.log(response);
             
-            for (var object in response) {
-                createMember(response[object]);
-            }
-        },
-        error: function(xhr, error, status) {
-            console.log(`Error: ${error}, Status: ${status}`);
-        }
-    });
-})
+//             for (var object in response) {
+//                 createMember(response[object]);
+//             }
+//         },
+//         error: function(xhr, error, status) {
+//             console.log(`Error: ${error}, Status: ${status}`);
+//         }
+//     });
+// })
 
 function createMember(object) {
     var container = $('#member-container');

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <div id="member-container">
+    {% for member in members %}
+      {% include "member_card.html" %}
+    {% endfor %}
+  </div>
+{% endblock %}

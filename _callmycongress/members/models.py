@@ -1,13 +1,26 @@
 from django.db import models
+from django.db.models import Q
+
 from .constants import STATES
 
 
 class MemberManager(models.Manager):
+    def search_filter(self, *args, **kwargs):
+        first_name = kwargs.get('first_name')
+        last_name = kwargs.get('last_name')
+
+        qs = self.get_queryset()
+        qs = qs.filter(
+            Q(first_name__icontains=first_name) & Q(last_name__icontains=last_name)
+        )
+        return qs
+
     def senators(self):
         return self.filter(chamber='Senate')
 
     def representatives(self):
         return self.filter(chamber='House')
+
 
 class Member(models.Model):
     PARTY_CHOICES = [('D', 'Democrat'), ('R', 'Republican'), ('I', 'Independent')]

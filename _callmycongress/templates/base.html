@@ -19,6 +19,11 @@
     </header>
 
     <main id="main-container">
+      <form id="member-search-form" action="{% url 'members:members' %}">
+          <label for="address">Address:</label>
+          <input id="address" name="address" class="form-control" type="text" placeholder="Address">
+        <button type="submit" class="btn btn-info btn-lg">Find</button>
+      </form>
       {% block main %}
       {% endblock %}
     </main>

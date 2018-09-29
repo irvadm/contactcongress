@@ -126,32 +126,30 @@ class GoogleCivicClient(object):
 
 class GoogleCivicRepresentativeClient(GoogleCivicClient):
 
-    def get_representatives(self, qualifier='representatives', **kwargs):
+    def get_representatives(self, address, qualifier='representatives'):
         """
         GET https://www.googleapis.com/civicinfo/v2/representatives?key=<YOUR_API_KEY>&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS&electionId=2000
         role: legislatorLowerBody|legislatorUpperBody|
         parameters: address, roles, 
         """
         parameters = {
-            'key': self.API_KEY
+            'key': self.API_KEY,
+            'roles': ["legislatorLowerBody", "legislatorUpperBody"],
+            'address': address
         }
-
-        if kwargs['roles']:
-            parameters['roles'] = kwargs.get('roles')
-
-        if kwargs['address']:
-            parameters['address'] = kwargs.get('address')
+        pprint(parameters)
 
         # Make path
         path = self.BASE_URL + qualifier
         log.info(f'PATH: {path}')
 
-        # Make call to Google Civic API
+        # # Make call to Google Civic API
         res = requests.get(path, params=parameters) 
         log.info(f'RESPONSE URL: {res.url}')
 
         # Check if response is successful
         if res.status_code == 200:
+
             data = res.json()
             return data['officials']
         else:

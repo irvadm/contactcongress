@@ -6,57 +6,28 @@ from django.shortcuts import render, redirect, reverse
 from clients.clients import GoogleCivicRepresentativeClient
 from .forms import ContactForm
 from .models import Member
+from .utils import remove_middle_initial
 
 import logging
+from pprint import pprint
 
 logger = logging.getLogger(__name__)
 
 
-def index(request):
-    return render(request, 'index.html')
-
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data.get('subject')
-            from_email = form.cleaned_data.get('from_email')
-            message = form.cleaned_data.get('message')
-            try:
-                send_mail(subject, message, from_email, recipient_list=['amiam89@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect('success')
-    else:
-        form = ContactForm()
-        return render(request, 'contact.html', {'form': form})
-
-def success(request):
-    return render(request, 'success.html')
-
-def search(request):
+def members(request):
     address = request.GET.get('address', '')
-    if request.GET.get('roles') == '':
-        roles = ['legislatorUpperBody', 'legislatorLowerBody']
-    else:
-        roles = request.GET.get('roles')
-    print('REQUEST.GET')
-    print(request.GET)
-    
-    print('address: {}'.format(address))
-    print('roles: {}'.format(roles))
+    logger.info(f'ADDRESS: {address}')
 
     client = GoogleCivicRepresentativeClient()
-    data = client.get_representatives(address=address, roles=roles) # officials
+    data = client.get_representatives(address=address) # officials
+    
     members = []
     for official in data:
         name = official['name']
-        name = name.split() #['Mark', 'R.', 'Warner']
-        first_name = name[0]
-        last_name = name[len(name) - 1]
+        name = remove_middle_initial(name)
         try:
             member = Member.objects.get(
-                Q(first_name=first_name) & Q(last_name=last_name)
+                Q(first_name=name['first_name']) & Q(last_name=name['last_name'])
             )
             logger.info(f'FOUND: {member}')
             members.append({
@@ -76,5 +47,4 @@ def search(request):
             })
         except:
             continue
-    logger.info(members)
-    return JsonResponse(members, safe=False)
+    return render(request, 'members.html', {'members': members})

@@ -1,0 +1,32 @@
+<div member-id="{{ member.member_id }}" class="member">
+    <div class="row">
+        <div class="col-md-3 member-image">
+            <img class="img-fluid rounded" src="{{ member.image }}">
+            <hr>
+            <div class="email"><a href="{{ member.contact_page }}">Email</a></div>
+            <div class="website"><a href="{{ member.website }}">Website</a></div>
+        </div>
+
+        <div class="col-md-9 member-info">
+            <h4 class=""><a href="{{ member.website }}">{{ member.first_name }} {{ member.last_name }} ({{ member.party }})</a></h4>
+            <div class="lead">{{ member.title }}</div>
+            <div class="office">
+                <span class="member-label">Office:</span>
+                <span>{{ member.office }}</span>
+            </div>
+            <div class="phone">
+                <span class="member-label">Phone:</span>
+                <span>{{ member.phone }}</span>
+            </div>
+            <hr>
+            <div class="social-media">
+                <a href="https://www.twitter.com/{{ member.twitter_account }}">
+                    <img class="tw-icon" src="static/img/twitter-icon.png" alt="twitter">
+                </a>
+                <a href="https://www.facebook.com/{{ member.facebook_account }}">
+                    <img class="fb-icon" src="static/img/facebook-icon.png" alt="facebook">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

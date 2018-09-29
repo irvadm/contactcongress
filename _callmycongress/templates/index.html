@@ -3,21 +3,7 @@
 
 
 {% block main %}
-  <form id="member-search-form" action="{% url 'search' %}">
-      <label for="address">Address:</label>
-      <input id="address" class="form-control" type="text" placeholder="Address">
-      <label for="roles">Role:</label>
-      <select id="roles" class="form-control" name="roles">
-        <option value="" selected>Both</option>
-        <option value="legislatorLowerBody">House</option>
-        <option value="legislatorUpperBody">Senate</option>
-      </select>
-    <button type="submit" class="btn btn-info btn-lg">Find</button>
-  </form>
 
-  <hr>
-
-  <div id="member-container"></div>
 {% endblock %}
 
 {% block js %}
