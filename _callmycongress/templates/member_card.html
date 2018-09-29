@@ -8,8 +8,9 @@
         </div>
 
         <div class="col-md-9 member-info">
-            <h4 class=""><a href="{{ member.website }}">{{ member.first_name }} {{ member.last_name }} ({{ member.party }})</a></h4>
-            <div class="lead">{{ member.title }}</div>
+            <h4 class="mb-0"><a href="{{ member.website }}">{{ member.first_name }} {{ member.last_name }} ({{ member.party }})</a></h4>
+            <div class="text-muted">{{ member.title }}</div>
+
             <div class="office">
                 <span class="member-label">Office:</span>
                 <span>{{ member.office }}</span>
@@ -20,11 +21,12 @@
             </div>
             <hr>
             <div class="social-media">
+                <h5>Social Media</h5>
                 <a href="https://www.twitter.com/{{ member.twitter_account }}">
-                    <img class="tw-icon" src="static/img/twitter-icon.png" alt="twitter">
+                  <img src="/static/img/twitter-icon.svg" alt="twitter">
                 </a>
                 <a href="https://www.facebook.com/{{ member.facebook_account }}">
-                    <img class="fb-icon" src="static/img/facebook-icon.png" alt="facebook">
+                  <img src="/static/img/facebook-icon.svg" alt="facebook">
                 </a>
             </div>
         </div>

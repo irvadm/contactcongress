@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -9,79 +7,41 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="40"
-   height="40"
-   viewBox="0 0 10.583333 10.583333"
+   height="42"
+   id="Layer_1"
    version="1.1"
-   id="svg6224"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   viewBox="0 0 42 42"
+   width="42"
+   xml:space="preserve"
    sodipodi:docname="facebook-icon.svg"
    inkscape:export-filename="C:\Users\Adrianna\Documents\Personal Documents\Projects\Web Projects\callmycongress_project\_callmycongress\static\img\facebook-icon.png"
    inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96">
-  <defs
-     id="defs6218" />
-  <sodipodi:namedview
-     id="base"
+   inkscape:export-ydpi="96"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+     id="metadata9"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs7" /><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8.6494312"
-     inkscape:cx="29.345533"
-     inkscape:cy="24.229941"
-     inkscape:document-units="mm"
-     inkscape:current-layer="g4528"
-     showgrid="false"
-     units="px"
-     width="800px"
      inkscape:window-width="1600"
      inkscape:window-height="837"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="3.5223881"
+     inkscape:cx="12.207627"
+     inkscape:cy="53.65678"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:pagecheckerboard="true" />
-  <metadata
-     id="metadata6221">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-286.41666)">
-    <g
-       id="g4528"
-       transform="translate(-9.4385068,-0.09717872)">
-      <text
-         id="text1381"
-         y="295.14151"
-         x="12.959911"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;line-height:7.06842232px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4598cf;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-         xml:space="preserve"
-         transform="scale(1.0003392,0.99966092)"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#4598cf;fill-opacity:1;stroke-width:0.26458335"
-           y="295.14151"
-           x="12.959911"
-           id="tspan1379"
-           sodipodi:role="line">f</tspan></text>
-      <rect
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#4598cf;stroke-width:0.79374999;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-         id="rect844"
-         width="9.260417"
-         height="9.260417"
-         x="10.099965"
-         y="287.17529"
-         ry="0.66145831" />
-    </g>
-  </g>
-</svg>
+     inkscape:current-layer="Layer_1" /><path
+     d="m 18.176667,31.88 h 4.496 V 20.998666 H 25.672 l 0.397333,-3.749333 h -3.396666 l 0.0047,-1.877333 c 0,-0.977334 0.09333,-1.502 1.496,-1.502 H 26.048 v -3.75 h -3 c -3.603333,0 -4.871333,1.819333 -4.871333,4.878 v 2.251333 h -2.246 v 3.75 h 2.246 z M 21,41 C 9.954667,41 1,32.045333 1,21 1,9.954 9.954667,1 21,1 32.045333,1 41,9.954 41,21 41,32.045333 32.045333,41 21,41 Z"
+     style="clip-rule:evenodd;fill:#3a589b;fill-rule:evenodd;stroke-width:1"
+     id="path2"
+     inkscape:connector-curvature="0" /></svg>

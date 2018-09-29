@@ -86,8 +86,6 @@ form > * {
 .member-label {
     font-weight: bold;
 }
-.social-media {
-}
 .button {
     display: inline-block;
     width: 50%;
@@ -99,10 +97,6 @@ form > * {
     margin: 4px 2px;
     cursor: pointer;
     color: white;
-}
-hr {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
 }
 /* --- Member styles --- */
 
