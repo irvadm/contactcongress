@@ -29,14 +29,6 @@ ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# API keys
-from decouple import config
-GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
-PROPUBLICA_CONGRESS_API_KEY = config('PROPUBLICA_CONGRESS_API_KEY', default='')
-TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
-TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
-TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
-TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')
 
 
 # Application definition
@@ -48,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_apscheduler',
     'core',
     'members',
 ]
@@ -167,7 +160,7 @@ LOGGING = {
     'loggers': {
         '': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False
         },
         'django.server': {
@@ -185,3 +178,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# API keys
+from decouple import config
+GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
+PROPUBLICA_CONGRESS_API_KEY = config('PROPUBLICA_CONGRESS_API_KEY', default='')
+TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
+TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
+TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
+TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')

@@ -67,7 +67,6 @@ class MemberUpdater(object):
             member.save()
 
 
-
     def update_member_images(self):
         api = twitter.Api(
             consumer_key=settings.TWITTER_CONSUMER_KEY,
@@ -82,6 +81,7 @@ class MemberUpdater(object):
                     user = api.GetUser(screen_name=m.twitter_account)
                 except:
                     log.error(f'Could not find Twitter user: {m.twitter_account}')
+                    continue
                 if user:
                     log.info('Found user: {}'.format(user))
                     if user.profile_image_url:
@@ -98,10 +98,3 @@ class MemberUpdater(object):
                             m.save()
                 else:
                     continue
-
-def member_tasks():
-    """ Job function added to task scheduler. """
-    updater = MemberUpdater()
-    updater.update_members(chamber='house')
-    updater.update_members(chamber='senate')
-    # updater.update_member_images()
