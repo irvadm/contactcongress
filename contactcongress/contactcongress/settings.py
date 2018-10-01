@@ -16,16 +16,27 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+# API keys
+from decouple import config
+GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
+PROPUBLICA_CONGRESS_API_KEY = config('PROPUBLICA_CONGRESS_API_KEY', default='')
+TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
+TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
+TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
+TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p@3y!tc(#rd9(&78-f4lwd1vp!_%a4ml#f!5r!@2zpi*$_y71p'
+
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'contactcongress.herokuapp.com']
 
 
 # Application definition
@@ -42,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -78,15 +90,19 @@ WSGI_APPLICATION = 'contactcongress.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'contactcongress',
-        'USER': 'name',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'contactcongress',
+#         'USER': 'name',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
@@ -182,20 +198,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 ]
 
-# API keys
-from decouple import config
-GOOGLE_CIVIC_API_KEY = config('GOOGLE_CIVIC_API_KEY', default='')
-PROPUBLICA_CONGRESS_API_KEY = config('PROPUBLICA_CONGRESS_API_KEY', default='')
-TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
-TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
-TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
-TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')
+

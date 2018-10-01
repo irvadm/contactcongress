@@ -2,7 +2,11 @@
 resources.txt
 sample_data/
 write_to_file.py
-local_settings.py
+*local_settings.py
+
+
+# Static files
+*/static/admin/*
 
 ### OSX ###
 .DS_Store
