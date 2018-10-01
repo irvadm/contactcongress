@@ -1,24 +1,23 @@
 <div member-id="{{ member.member_id }}" class="member">
     <div class="row">
         <div class="col-md-3 member-image">
-            <img class="img-fluid rounded" src="{{ member.image }}">
-            <hr>
-            <div class="email"><a href="{{ member.contact_page }}">Email</a></div>
-            <div class="website"><a href="{{ member.website }}">Website</a></div>
+          <img class="img-fluid rounded" src="{{ member.image }}">
         </div>
-
-        <div class="col-md-9 member-info">
+          
+          <div class="col-md-9 member-info">
             <h4><a href="{{ member.website }}">{{ member.first_name }} {{ member.last_name }} ({{ member.party }})</a></h4>
             <div class="lead member-title">{{ member.title }}</div>
-
+            
             <div class="office">
-                <span class="member-label">Office:</span>
-                <span>{{ member.office }}</span>
+              <span class="member-label">Office:</span>
+              <span>{{ member.office }}</span>
             </div>
             <div class="phone">
-                <span class="member-label">Phone:</span>
-                <span>{{ member.phone }}</span>
+              <span class="member-label">Phone:</span>
+              <span>{{ member.phone }}</span>
             </div>
+            <div class="email"><a href="{{ member.contact_page }}">Email</a></div>
+            <div class="website"><a href="{{ member.website }}">Website</a></div>
             <hr>
             <div class="social-media">
                 <h5>Social Media</h5>

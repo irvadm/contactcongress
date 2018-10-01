@@ -1,10 +1,9 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.db.models import Q
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect, reverse
 
 from clients.clients import GoogleCivicRepresentativeClient
-from .forms import ContactForm
 from .models import Member
 from .utils import remove_middle_initial
 
@@ -15,6 +14,8 @@ logger = logging.getLogger(__name__)
 
 
 def members(request):
+    if not request.GET.get('address'):
+        return render(request, '400.html')
     address = request.GET.get('address', '')
     logger.info(f'ADDRESS: {address}')
 
@@ -47,4 +48,4 @@ def members(request):
             })
         except:
             continue
-    return render(request, 'members.html', {'members': members})
+    return render(request, 'members/members.html', {'members': members})

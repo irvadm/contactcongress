@@ -1,4 +1,8 @@
 /* --- Global styles --- */
+hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 a {
     color: #444;
 }
@@ -31,12 +35,13 @@ a:hover {
     text-align: center;
     color: white;
 }
-#footer-nav > * {
+
+.link {
     color: white;
     font-size: 80%;
     font-weight: 400;
 }
-#footer-nav > .footer-link:hover {
+.link:hover {
     color: #ff3b3f;
 }
 .header {
@@ -75,6 +80,7 @@ h4 {
 #member-container {
     width: 60%;
     margin: 0 auto;
+    margin-top: 2rem;
 }
 
 

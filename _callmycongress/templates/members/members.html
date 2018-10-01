@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block main %}
+  {% include "form.html" %}
   <div id="member-container">
     {% for member in members %}
-      {% include "member_card.html" %}
+      {% include "members/member_card.html" %}
     {% endfor %}
   </div>
 {% endblock %}

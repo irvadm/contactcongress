@@ -19,22 +19,21 @@
     </header>
 
     <main id="main-container">
-      <form id="member-search-form" action="{% url 'members:members' %}">
-          <label for="address">Address:</label>
-          <input id="address" name="address" class="form-control" type="text" placeholder="Address">
-        <button type="submit" class="btn btn-info btn-lg">Find</button>
-      </form>
-      <hr>
       {% block main %}
       {% endblock %}
     </main>
 
     <footer id="footer-nav" >
-      <span class="small">Data retrieved through </span>
-      <a class="footer-link" href="https://projects.propublica.org/api-docs/congress-api/">Propublica Congress API</a>
-      <span> and </span>
-      <a class="footer-link" href="https://developers.google.com/civic-information/">Google Civic Information API</a>
-
+      <div>
+        <a class="link" href="{% url 'about' %}">About</a>
+      </div>
+      <div>
+        <span class="small">Data retrieved through </span>
+        <a class="link" href="https://projects.propublica.org/api-docs/congress-api/">Propublica Congress API</a>
+        <span class="small"> and </span>
+        <a class="link" href="https://developers.google.com/civic-information/">Google Civic Information API.</a>
+        <span class="small">This Information here is not guaranteed to be up-to-date and some inaccuracies may be present.</span>
+      </div>
     </footer>
 
 
