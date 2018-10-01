@@ -2,6 +2,7 @@
 resources.txt
 sample_data/
 write_to_file.py
+local_settings.py
 
 ### OSX ###
 .DS_Store
