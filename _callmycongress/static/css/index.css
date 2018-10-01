@@ -59,6 +59,9 @@ form > * {
     margin: 0.5em;
 }
 
+h4 {
+    margin: 0;
+}
 /* --- Global styles --- */
 
 
@@ -75,13 +78,15 @@ form > * {
 }
 
 
-/* 4598cfff */
 /* --- Member styles --- */
 .member {
     background-color: #ebebeb;
     width: 100%;
     margin-bottom: 1em;
     padding: 0.5em;
+}
+.member-title {
+    margin-bottom: 0.5rem;
 }
 .member-label {
     font-weight: bold;
