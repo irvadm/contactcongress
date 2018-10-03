@@ -101,3 +101,4 @@ db.sqlite3
 static_cdn/
 media_cdn/
 migrations/
+contactcongress/contactcongress/settings/local.py

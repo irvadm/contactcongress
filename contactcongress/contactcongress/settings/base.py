@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+import socket
+
+try:
+    HOSTNAME = socket.gethostbyname()
+except:
+    HOSTNAME = 'localhost'
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,20 +32,6 @@ TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
 TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
 TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
 TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-
-
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['localhost', 'contactcongress.herokuapp.com']
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -85,6 +79,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'contactcongress.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+print(DATABASES['default'])
+# import dj_database_url
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
+# DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

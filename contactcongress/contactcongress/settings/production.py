@@ -1,14 +1,13 @@
 from .base import *
+from decouple import config as decouple_config
+import dj_database_url
 
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = False
+DEBUG = decouple_config('DEBUG')
+
+SECRET_KEY = decouple_config('SECRET_KEY')
 
 ALLOWED_HOSTS = ['contactcongress.herokuapp.com']
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-DATABASES['default']['CONN_MAX_AGE'] = 500
+DATABASES['default'] = dj_database_url.config(decouple_config('DATABASE_URL'))
