@@ -12,16 +12,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-import socket
-
-try:
-    HOSTNAME = socket.gethostbyname()
-except:
-    HOSTNAME = 'localhost'
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#'C:\\Users\\Adrianna\\Documents\\Personal Documents\\Projects\\Web Projects\\contactcongress_project\\contactcongress'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'p@3y!tc(#rd9(&78-f4lwd1vp!_%a4ml#f!5r!@2zpi*$_y71p')
+DEBUG = os.environ.get('DEBUG', True)
 
 
 # API keys
@@ -32,6 +28,8 @@ TWITTER_CONSUMER_KEY = config('TWITTER_CONSUMER_KEY', default='')
 TWITTER_SECRET_KEY = config('TWITTER_SECRET_KEY', default='')
 TWITTER_ACCESS_TOKEN = config('TWITTER_ACCESS_TOKEN', default='')
 TWITTER_ACCESS_SECRET_KEY = config('TWITTER_ACCESS_SECRET_KEY', default='')
+
+ALLOWED_HOSTS = ['localhost', 'contactcongress.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
@@ -59,6 +57,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'contactcongress.urls'
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -85,11 +85,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-print(DATABASES['default'])
-# import dj_database_url
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
-# DATABASES['default']['CONN_MAX_AGE'] = 500
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -174,18 +173,22 @@ LOGGING = {
     }
 }
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# This the base URL location from which static files will be served,
+# for example on a CDN. This is used for the static template variable
+# that is accessed in our base template.
 STATIC_URL = '/static/'
+
+# This is the absolute path to a directory where Django's
+# "collectstatic" tool will gather any static files referenced
+# in our templates.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Extra places for collectstatic to find static files.
+#This lists additional directories that Django's collectstatic tool
+# should search for static files. These get collected into STATIC_ROOT
+# when I run `collectstatic`.
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-

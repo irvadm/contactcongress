@@ -11,13 +11,13 @@ scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), "djangojobstore")
 
 
-@register_job(scheduler, "interval", seconds=14400, replace_existing=True)
+@register_job(scheduler, "interval", seconds=86400, replace_existing=True)
 def member_tasks():
     """ Job function added to task scheduler. """
     updater = MemberUpdater()
     updater.update_members(chamber='house')
     updater.update_members(chamber='senate')
-    # updater.update_member_images()
+    updater.update_member_images()
 
 register_events(scheduler)
 

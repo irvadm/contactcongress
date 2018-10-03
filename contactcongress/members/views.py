@@ -21,7 +21,10 @@ def members(request):
 
     client = GoogleCivicRepresentativeClient()
     data = client.get_representatives(address=address) # officials
-    
+
+    for official in data:
+        logger.info('Google Civic API found: {}'.format(official['name']))
+
     members = []
     for official in data:
         name = official['name']
@@ -48,4 +51,4 @@ def members(request):
             })
         except:
             continue
-    return render(request, 'members/members.html', {'members': members})
+    return render(request, 'members.html', {'members': members})

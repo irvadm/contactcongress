@@ -4,7 +4,6 @@
 *write_to_file.py
 *local.py
 
-
 # Static files
 */static/admin/*
 */staticfiles/*
@@ -101,4 +100,5 @@ db.sqlite3
 static_cdn/
 media_cdn/
 migrations/
+contactcongress/contactcongress/settings/local.py
 contactcongress/contactcongress/settings/local.py
