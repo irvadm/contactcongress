@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io
-resources.txt
-sample_data/
-write_to_file.py
+*resources.txt
+*sample_data/
+*write_to_file.py
 *local.py
 
 
