@@ -3,6 +3,7 @@
 *sample_data/
 *write_to_file.py
 *local.py
+.vscode/
 
 # Static files
 */static/admin/*
